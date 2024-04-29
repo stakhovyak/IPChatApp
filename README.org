@@ -1,0 +1,5 @@
+* TODO
+- add error handling wrapper
+- add quit option
+- ClientConnectionHandler receives the messages but can't display them in ChatWindow.
+- Refactor the connection handlers to extend one class
