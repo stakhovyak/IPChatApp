@@ -1,5 +1,15 @@
-* TODO
-- add error handling wrapper
-- add quit option
-- ClientConnectionHandler receives the messages but can't display them in ChatWindow.
-- Refactor the connection handlers to extend one class
+* About the app
+A simple client server app in Java.
+
+** Concepts
+- The client's data is not stored in server.
+
+** The problems
+1. Add error handling wrapper
+2. Add quit option
+3. ClientConnectionHandler receives the messages but can't display them in ChatWindow.
+4. Refactor the connection handlers to extend one class
+5. The app's architecture looks like MVC, but there is no Model!
+
+** Possible solutions
+The third issue could be solved by implementing Observer and updating the ChatWindow.
