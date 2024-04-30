@@ -21,10 +21,6 @@ public class ClientController {
         //SwingUtilities.invokeLater(ChatWindow::new);
     }
 
-    public Socket getSocket() {
-        return socket;
-    }
-
     public ClientConnectionHandler getClientConnectionHandler() {
         return connectionHandler;
     }

@@ -73,7 +73,8 @@ public class ChatWindow extends JFrame {
         panel.add(new JLabel("Server Port:"));
         panel.add(portField);
 
-        int result = JOptionPane.showConfirmDialog(null, panel, "Server Address and Port", JOptionPane.OK_CANCEL_OPTION);
+        int result = JOptionPane.showConfirmDialog(null, panel,
+                "Server Address and Port", JOptionPane.OK_CANCEL_OPTION);
         if (result == JOptionPane.OK_OPTION) {
             String address = addressField.getText();
             String port = portField.getText();
@@ -97,6 +98,7 @@ public class ChatWindow extends JFrame {
     }
 
     private void sendMessage(String content) {
+        // TODO: VERY BAD WAY TO DO THIS!!!!!
         clientController.getClientConnectionHandler()
                 .sendMessage(new Message(username, content));
         displayMessage(username + ": " + content);
