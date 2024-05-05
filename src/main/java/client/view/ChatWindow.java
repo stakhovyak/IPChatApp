@@ -1,114 +1,103 @@
 package client.view;
 
-import client.components.ClientController;
+import client.components.ChatPresenter;
+import client.components.ClientPresenter;
+import com.google.inject.Inject;
+import com.google.inject.Provider;
+import com.google.inject.Singleton;
 import commons.Message;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
-public class ChatWindow extends JFrame {
-    private final JTextArea messageArea;
-    private final JTextField inputField;
-    private final String username;
-    private ClientController clientController;
+@Singleton
+public class ChatWindow extends JFrame implements ChatView {
+    private final JTextField messageTextField = new JTextField();
+    private final JTextArea chatTextArea = new JTextArea();
+    private final JButton sendButton = new JButton("Send");
+    private final JMenuItem connectMenuItem = new JMenuItem("Connect to Server");
 
-    public ChatWindow() {
-        this.username = askUsername();
+    private final Provider<ClientPresenter> clientPresenterProvider;
 
-        setTitle("Chat - " + username);
+    private ChatPresenter presenter;
+
+    private String username;
+
+    @Inject
+    public ChatWindow(Provider<ClientPresenter> clientPresenterProvider) {
+        this.clientPresenterProvider = clientPresenterProvider;
+        initialize();
+    }
+
+    private void initialize() {
+        username = JOptionPane.showInputDialog("Enter your username.");
+
+        setTitle("Chat Application");
         setSize(400, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        messageArea = new JTextArea();
-        messageArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(messageArea);
-        add(scrollPane, BorderLayout.CENTER);
+        chatTextArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(chatTextArea);
+        getContentPane().add(scrollPane, BorderLayout.CENTER);
 
-        inputField = new JTextField();
-        inputField.addActionListener(e -> {
-            sendMessage(inputField.getText());
-            inputField.setText("");
-        });
-        add(inputField, BorderLayout.SOUTH);
+        JPanel panel = new JPanel();
+        getContentPane().add(panel, BorderLayout.SOUTH);
+        panel.setLayout(new BorderLayout());
 
-        JButton sendButton = new JButton("Send Message");
+        panel.add(messageTextField, BorderLayout.CENTER);
+
         sendButton.addActionListener(e -> {
-            sendMessage(inputField.getText());
-            inputField.setText("");
+            var message = new Message(username, Objects.requireNonNullElse(messageTextField.getText(), ""));
+            if (!message.contents().isEmpty()) {
+                presenter.sendMessage(message);
+                messageTextField.setText("");
+            }
         });
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.add(sendButton);
-        add(buttonPanel, BorderLayout.NORTH);
+
+        panel.add(sendButton, BorderLayout.EAST);
 
         JMenuBar menuBar = new JMenuBar();
-        JMenu serverMenu = new JMenu("Server");
-        JMenuItem connectMenuItem = new JMenuItem("Connect to Server");
-        connectMenuItem.addActionListener(e -> {
-            String[] addressAndPort = askAddressAndPort();
-            if (addressAndPort != null) {
-                connectToServer(addressAndPort[0], Integer.parseInt(addressAndPort[1]));
-            }
-        });
-        serverMenu.add(connectMenuItem);
-        menuBar.add(serverMenu);
         setJMenuBar(menuBar);
 
-        setVisible(true);
+        JMenu serverMenu = new JMenu("Server");
+        menuBar.add(serverMenu);
 
-        displayMessage("You are not connected to any server. Use the 'Connect to Server' option to connect.");
-    }
+        serverMenu.add(connectMenuItem);
 
-    private String askUsername() {
-        return JOptionPane.showInputDialog("Enter your username:");
-    }
-
-    private String[] askAddressAndPort() {
-        JPanel panel = new JPanel(new GridLayout(3, 2));
-        JTextField addressField = new JTextField("localhost");
-        JTextField portField = new JTextField("6565");
-
-        panel.add(new JLabel("Server Address:"));
-        panel.add(addressField);
-        panel.add(new JLabel("Server Port:"));
-        panel.add(portField);
-
-        int result = JOptionPane.showConfirmDialog(null, panel,
-                "Server Address and Port", JOptionPane.OK_CANCEL_OPTION);
-        if (result == JOptionPane.OK_OPTION) {
-            String address = addressField.getText();
-            String port = portField.getText();
-            return new String[]{address, port};
-        } else {
-            return null;
-        }
-    }
-
-    private void connectToServer(String address, int port) {
-        new Thread(() -> {
-            try {
-                clientController = new ClientController(address, port);
-                clientController.startClient();
-                displayMessage("Connected to server");
-                inputField.setEditable(true);
-            } catch (Exception e) {
-                displayMessage("Failed to connect to server. Please check the address and port.");
+        connectMenuItem.addActionListener(e -> {
+            String serverAddress = JOptionPane.showInputDialog("Enter server address:");
+            if (serverAddress != null) {
+                String portStr = JOptionPane.showInputDialog("Enter port:");
+                if (portStr != null) {
+                    int port = Integer.parseInt(portStr);
+                    presenter.connect(serverAddress, port);
+                }
             }
-        }).start();
+        });
     }
 
-    private void sendMessage(String content) {
-        // TODO: VERY BAD WAY TO DO THIS!!!!!
-        clientController.getClientConnectionHandler()
-                .sendMessage(new Message(username, content));
-        displayMessage(username + ": " + content);
+    @Override
+    public void displayMessage(Message message) {
+        SwingUtilities.invokeLater(() -> chatTextArea.append(message.sender() + ": " + message.contents() + "\n"));
     }
 
-    public void displayMessage(String message) {
-        messageArea.append(message + "\n");
+    @Override
+    public void displayError(String errorMessage) {
+        SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE));
     }
 
-    public static void main(String[] args) {
-        new ChatWindow();
+    @Override
+    public void setChatPresenter(ChatPresenter presenter) {
+        this.presenter = presenter;
+    }
+
+    @Override
+    public void setVisible(Boolean visible) {
+        super.setVisible(visible);
+        if (presenter == null) {
+            presenter = clientPresenterProvider.get();
+            presenter.setChatView(this);
+        }
     }
 }

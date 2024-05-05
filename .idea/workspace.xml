@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9f0bd46-7f37-4203-a714-f3e72eeb5ef6" name="Changes" comment="first commit, problems are covered in README.org">
+    <list default="true" id="b9f0bd46-7f37-4203-a714-f3e72eeb5ef6" name="Changes" comment="Huge update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.org" beforeDir="false" afterPath="$PROJECT_DIR$/README.org" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/components/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/components/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/view/ChatWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/view/ChatWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/view/LoginDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/components/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commons/MessageBroadcastManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/MessageBroadcastManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/components/BroadcastManager.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,12 +18,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -39,6 +45,9 @@
     &quot;accountId&quot;: &quot;f924cafe-4964-4a4a-89d8-45e492096b8a&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -50,21 +59,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ChatView.executor": "Run",
     "Application.ChatWindow.executor": "Run",
+    "Application.Client.executor": "Run",
+    "Application.ClientApp.executor": "Run",
     "Application.ClientController.executor": "Run",
+    "Application.ServerApp.executor": "Run",
     "Application.ServerController.executor": "Run",
+    "JUnit.ServerConnectionHandlerTest.executor": "Run",
+    "JUnit.ServerTest.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "alternative",
     "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ChatWindow">
+  <component name="RunManager" selected="Application.ClientApp">
     <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
       <setting name="displayName" value="" />
       <setting name="bbPath" value="" />
@@ -95,21 +110,8 @@
       <setting name="urlFile" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ChatWindow" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="client.view.ChatWindow" />
-      <module name="IPChatApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="client.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClientController" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="client.components.ClientController" />
+    <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.components.ClientApp" />
       <module name="IPChatApp" />
       <extension name="coverage">
         <pattern>
@@ -121,8 +123,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="server.components.ServerController" />
+    <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.components.ClientApp" />
+      <module name="IPChatApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.components.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="server.components.ServerApp" />
       <module name="IPChatApp" />
       <extension name="coverage">
         <pattern>
@@ -134,16 +149,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServerConnectionHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IPChatApp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ServerConnectionHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IPChatApp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ServerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.ChatWindow" />
-      <item itemvalue="Application.ClientController" />
-      <item itemvalue="Application.ServerController" />
+      <item itemvalue="Application.ServerApp" />
+      <item itemvalue="Application.ClientApp" />
+      <item itemvalue="JUnit.ServerConnectionHandlerTest" />
+      <item itemvalue="JUnit.ServerTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServerController" />
-        <item itemvalue="Application.ClientController" />
-        <item itemvalue="Application.ChatWindow" />
+        <item itemvalue="Application.ClientApp" />
+        <item itemvalue="Application.ServerApp" />
+        <item itemvalue="JUnit.ServerConnectionHandlerTest" />
+        <item itemvalue="JUnit.ServerTest" />
+        <item itemvalue="Application.ClientApp" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +200,47 @@
       <option name="project" value="LOCAL" />
       <updated>1714413575021</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated readme">
+      <option name="closed" value="true" />
+      <created>1714504012249</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714504012249</updated>
+    </task>
+    <task id="LOCAL-00003" summary="overall changes">
+      <option name="closed" value="true" />
+      <created>1714504060524</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714504060524</updated>
+    </task>
+    <task id="LOCAL-00004" summary="new branch, used Guice.">
+      <option name="closed" value="true" />
+      <created>1714844539358</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714844539358</updated>
+    </task>
+    <task id="LOCAL-00005" summary="new branch, used Guice.">
+      <option name="closed" value="true" />
+      <created>1714844569139</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714844569139</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Huge update">
+      <option name="closed" value="true" />
+      <created>1714913571023</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714913571023</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,7 +248,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="alternative" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -180,6 +268,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit, problems are covered in README.org" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit, problems are covered in README.org" />
+    <MESSAGE value="updated readme" />
+    <MESSAGE value="overall changes" />
+    <MESSAGE value="new branch, used Guice." />
+    <MESSAGE value="Huge update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Huge update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/server/components/Server.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/server/components/Server.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

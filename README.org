@@ -1,5 +1,7 @@
-* About the app
-A simple client server app in Java.
+
+* A simple client server app in Java.
+the current development is in the branch 'alternative'
+
 
 ** Concepts
 - The client's data is not stored in server.
@@ -7,9 +9,7 @@ A simple client server app in Java.
 ** The problems
 1. Add error handling wrapper
 2. Add quit option
-3. ClientConnectionHandler receives the messages but can't display them in ChatWindow.
-4. Refactor the connection handlers to extend one class
-5. The app's architecture looks like MVC, but there is no Model!
-
-** Possible solutions
-The third issue could be solved by implementing Observer and updating the ChatWindow.
+3. Requires robust testing 
+4. Possibly the concurrency is not perfect 
+5. Possibly client's presenter is not very elegant solution 
+6. Project structure sucks!
