@@ -1,10 +1,11 @@
 package commons;
 
 import java.io.IOException;
-import java.net.Socket;
+import java.io.OutputStream;
+import java.util.function.Consumer;
 
-public interface BroadcastManager<T>  {
-    void broadcast(T data) throws IOException;
-    void addSocket(Socket socket) throws IOException;
-    void removeSocket(Socket socket);
+public interface BroadcastManager  {
+    void broadcast(Consumer<OutputStream> consumer) throws IOException;
+    void addOutputStream(OutputStream outputStream);
+    void removeOutputStream(int key);
 }

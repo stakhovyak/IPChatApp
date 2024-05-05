@@ -15,8 +15,7 @@ public class ServerModule extends AbstractModule {
         bind(ServerSocket.class).toInstance(createServerSocket());
         bind(ExecutorService.class).toInstance(Executors.newCachedThreadPool());
         bind(new TypeLiteral<IO<byte[]>>(){}).to(ByteIO.class);
-        bind(new TypeLiteral<DataProcessor<Message>>(){}).to(MessageProcessor.class);
-        bind(new TypeLiteral<BroadcastManager<Message>>(){}).to(MessageBroadcastManager.class);
+        bind(new TypeLiteral<BroadcastManager>(){}).to(MessageBroadcastManager.class);
     }
 
     private ServerSocket createServerSocket() {

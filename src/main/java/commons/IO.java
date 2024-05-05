@@ -1,9 +1,10 @@
 package commons;
 
 import java.io.IOException;
-import java.net.Socket;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public interface IO <T> {
-    void send(T data, Socket socket) throws IOException;
-    T receive(Socket socket) throws IOException;
+    void send(T data, OutputStream outputStream) throws IOException;
+    T receive(InputStream inputStream) throws IOException;
 }
