@@ -4,30 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9f0bd46-7f37-4203-a714-f3e72eeb5ef6" name="Changes" comment="new branch, used Guice.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/components/ChatPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/components/ClientApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/components/ClientModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/components/ClientPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/view/ChatView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/MessageSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/Serializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/simplelogger.properties" afterDir="false" />
+    <list default="true" id="b9f0bd46-7f37-4203-a714-f3e72eeb5ef6" name="Changes" comment="Huge update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/components/ClientConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/components/ClientConnectionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/components/ClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/view/ChatWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/view/ChatWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commons/BroadcastManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BroadcastManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commons/ByteIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/ByteIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commons/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/IO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/commons/MessageBroadcastManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/MessageBroadcastManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/components/BroadcastManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/components/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/components/ServerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/components/ServerConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/components/ServerConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/components/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/components/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/components/ServerModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/components/ServerModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714844569139</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Huge update">
+      <option name="closed" value="true" />
+      <created>1714913571023</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714913571023</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,7 +271,8 @@
     <MESSAGE value="updated readme" />
     <MESSAGE value="overall changes" />
     <MESSAGE value="new branch, used Guice." />
-    <option name="LAST_COMMIT_MESSAGE" value="new branch, used Guice." />
+    <MESSAGE value="Huge update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Huge update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

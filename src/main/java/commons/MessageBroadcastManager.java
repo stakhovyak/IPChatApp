@@ -11,7 +11,6 @@ import java.util.function.Consumer;
 
 @Singleton
 public class MessageBroadcastManager implements BroadcastManager {
-    private final Logger logger = LoggerFactory.getLogger(MessageBroadcastManager.class);
     private final ConcurrentMap<Integer, OutputStream> outputStreamConcurrentHashMap = new ConcurrentHashMap<>();
 
     @Override
@@ -32,4 +31,6 @@ public class MessageBroadcastManager implements BroadcastManager {
     public void removeOutputStream(int key) {
 
     }
+
+    private final Logger logger = LoggerFactory.getLogger(MessageBroadcastManager.class);
 }
