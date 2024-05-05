@@ -7,7 +7,6 @@
     <list default="true" id="b9f0bd46-7f37-4203-a714-f3e72eeb5ef6" name="Changes" comment="Huge update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/components/ClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commons/MessageBroadcastManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/MessageBroadcastManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/components/BroadcastManager.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,29 +56,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ChatView.executor": "Run",
-    "Application.ChatWindow.executor": "Run",
-    "Application.Client.executor": "Run",
-    "Application.ClientApp.executor": "Run",
-    "Application.ClientController.executor": "Run",
-    "Application.ServerApp.executor": "Run",
-    "Application.ServerController.executor": "Run",
-    "JUnit.ServerConnectionHandlerTest.executor": "Run",
-    "JUnit.ServerTest.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "alternative",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ChatView.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ChatWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ClientApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ClientController.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ServerApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ServerController.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServerConnectionHandlerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;alternative&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.ClientApp">
+}</component>
+  <component name="RunManager" selected="Application.ServerApp">
     <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
       <setting name="displayName" value="" />
       <setting name="bbPath" value="" />
@@ -175,8 +174,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientApp" />
         <item itemvalue="Application.ServerApp" />
+        <item itemvalue="Application.ClientApp" />
         <item itemvalue="JUnit.ServerConnectionHandlerTest" />
         <item itemvalue="JUnit.ServerTest" />
         <item itemvalue="Application.ClientApp" />
