@@ -12,3 +12,4 @@ the current development is in the branch 'alternative'
 3. Requires robust testing 
 4. Possibly the concurrency is not perfect 
 5. Possibly client's presenter is not very elegant solution 
+6. Project structure sucks!
